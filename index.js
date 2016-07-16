@@ -47,9 +47,9 @@ app.get('/', function(request, response) {
 
 app.get('/test', function(request, response) {
 
-  ig.tag_media_recent('dog', [], function(err, medias, pagination, remaining, limit) {
+  ig.tag_media_recent('dog', function(err, medias, pagination, remaining, limit) {
    if (err)
-     response.send("testerror:"+err.body);
+     response.send("test error:"+err);
    else
      response.send(medias);
      console.log("test done:"+medias);
