@@ -48,12 +48,14 @@ app.get('/', function(request, response) {
 app.get('/test', function(request, response) {
 
   ig.tag_media_recent('dog', function(err, medias, pagination, remaining, limit) {
-   if (err)
+   if (err){
      response.send("test error:"+err);
-   else
+     console.log("test error:"+err);
+   }
+   else{
      response.send(medias);
      console.log("test done:"+medias);
-
+   }
  });
 });
 
