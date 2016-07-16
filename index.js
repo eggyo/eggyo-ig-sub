@@ -47,11 +47,11 @@ app.get('/', function(request, response) {
 
 app.get('/test', function(request, response) {
 
-  ig.media_popular(function(err, medias, remaining, limit) {
+  ig.tag('dog', function(err, result, remaining, limit) {
    if (err)
      response.send(err.body);
    else
-     response.send(medias);
+     response.send(result);
  });
 });
 
