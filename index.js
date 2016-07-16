@@ -3,7 +3,7 @@ var app = express();
 var http = require('http');
 
 var ig = require('instagram-node').instagram();
-ig.use({ access_token: 'f0b52d7.424233b1ab1b43959998f992a3eefb81' });
+ig.use({ access_token: '876629.f0b52d7.424233b1ab1b43959998f992a3eefb81' });
 ig.use({ client_id: 'f0b52d7c5aa6422ca15e4822d1ebd830',
          client_secret: '71ffe85517bf49998481021048b5e2dc' });
 
@@ -46,7 +46,7 @@ app.get('/', function(request, response) {
 });
 
 app.get('/test', function(request, response) {
-
+  ig.use({ access_token: '876629.f0b52d7.424233b1ab1b43959998f992a3eefb81' });
   ig.tag_media_recent('dog', function(err, medias, pagination, remaining, limit) {
    if (err){
      response.send("test error:"+err);
