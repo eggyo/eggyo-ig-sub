@@ -1,8 +1,11 @@
 var express = require('express');
 var app = express();
+var http = require('http');
+
 var ig = require('instagram-node').instagram();
 
-
+ig.use({ client_id: 'f0b52d7c5aa6422ca15e4822d1ebd830',
+         client_secret: '71ffe85517bf49998481021048b5e2dc' });
 
 var webhook_url = 'http://eggyo-ig-sub.herokuapp.com/webhook';
 var redirect_uri = 'http://eggyo-ig-sub.herokuapp.com/handleauth';
@@ -42,8 +45,7 @@ app.get('/', function(request, response) {
 });
 
 app.get('/testDog', function(request, response) {
-  ig.use({ client_id: 'f0b52d7c5aa6422ca15e4822d1ebd830',
-           client_secret: '71ffe85517bf49998481021048b5e2dc' });
+
   ig.tag('tag', function(err, result, remaining, limit) {
     console.log(result);
   });
