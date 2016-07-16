@@ -26,6 +26,7 @@ exports.handleauth = function(req, res) {
   });
 };
 
+
 // This is where you would initially send users to authorize
 app.get('/authorize_user', exports.authorize_user);
 // This is your redirect URI
@@ -47,8 +48,13 @@ app.get('/', function(request, response) {
 app.get('/testDog', function(request, response) {
 
   ig.tag('tag', function(err, result, remaining, limit) {
-    console.log(result);
-  });
+    if (err) {
+      console.log("error"+err);
+      res.send(err);
+    } else {
+      console.log('Yay! Access token is ' + result);
+      res.send(result);
+    }  });
 });
 
 app.get('/webhook', function(req, res) {
