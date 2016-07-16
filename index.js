@@ -11,7 +11,7 @@ var webhook_url = 'http://eggyo-ig-sub.herokuapp.com/webhook';
 var redirect_uri = 'http://eggyo-ig-sub.herokuapp.com/handleauth';
 
 exports.authorize_user = function(req, res) {
-  res.redirect(ig.get_authorization_url(redirect_uri, { scope: ['likes'], state: 'a state' }));
+  res.redirect(ig.get_authorization_url(redirect_uri, { scope: ['likes','basic','public_content'], state: 'a state' }));
 };
 
 exports.handleauth = function(req, res) {
