@@ -46,7 +46,6 @@ app.get('/', function(request, response) {
 });
 
 app.get('/test', function(request, response) {
-  ig.use({ access_token: '876629.f0b52d7.424233b1ab1b43959998f992a3eefb81' });
   ig.tag_media_recent('dog', function(err, medias, pagination, remaining, limit) {
    if (err){
      response.send("test error:"+err);
