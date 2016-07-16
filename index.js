@@ -49,11 +49,9 @@ app.get('/testDog', function(request, response) {
 
   ig.tag('tag', function(err, result, remaining, limit) {
     if (err) {
-      console.log("error"+err);
-      res.send(err);
+      console.log("testDog error :"+err);
     } else {
-      console.log('Yay! Access token is ' + result);
-      res.send(result);
+      console.log('testDog done :' + result);
     }  });
 });
 
