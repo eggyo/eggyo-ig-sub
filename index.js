@@ -14,7 +14,7 @@ app.get('/', function(request, response) {
 });
 app.post('/webhook', function (request, response) {
   var data = response.body;
-  console.log("post data received :"+data));
+  console.log("post data received :"+data);
   response.sendStatus(200);
 });
 app.listen(app.get('port'), function() {
