@@ -49,9 +49,9 @@ app.get('/test', function(request, response) {
 
   ig.media_popular(function(err, medias, remaining, limit) {
    if (err)
-     res.send(err.body);
+     response.send(err.body);
    else
-     res.send(medias);
+     response.send(medias);
  });
 });
 
