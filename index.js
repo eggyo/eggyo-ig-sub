@@ -52,6 +52,8 @@ app.get('/test', function(request, response) {
      response.send(err.body);
    else
      response.send(result);
+     console.log(result);
+
  });
 });
 
