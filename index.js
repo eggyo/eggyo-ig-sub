@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-Instagram = require('instagram-node-lib');
+var Instagram = require('instagram-node-lib');
 
 Instagram.set('client_id', 'f0b52d7c5aa6422ca15e4822d1ebd830');
 Instagram.set('client_secret', '71ffe85517bf49998481021048b5e2dc');
