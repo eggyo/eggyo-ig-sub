@@ -17,7 +17,7 @@ exports.authorize_user = function(req, res) {
 exports.handleauth = function(req, res) {
   ig.authorize_user(req.query.code, redirect_uri, function(err, result) {
     if (err) {
-      console.log(err.body);
+      console.log("error"+err);
       res.send("Didn't work");
     } else {
       console.log('Yay! Access token is ' + result.access_token);
