@@ -45,14 +45,14 @@ app.get('/', function(request, response) {
   response.render('pages/index');
 });
 
-app.get('/testDog', function(request, response) {
+app.get('/test', function(request, response) {
 
-  ig.tag('tag', function(err, result, remaining, limit) {
-    if (err) {
-      console.log("testDog error :"+err);
-    } else {
-      console.log('testDog done :' + result);
-    }  });
+  ig.media_popular(function(err, medias, remaining, limit) {
+   if (err)
+     res.send(err.body);
+   else
+     res.send(medias);
+ });
 });
 
 app.get('/webhook', function(req, res) {
