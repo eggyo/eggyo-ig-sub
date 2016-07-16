@@ -47,12 +47,12 @@ app.get('/', function(request, response) {
 
 app.get('/test', function(request, response) {
 
-  ig.tag('dog', function(err, result, remaining, limit) {
+  ig.tag_media_recent('dog', [], function(err, medias, pagination, remaining, limit) {
    if (err)
-     response.send(err.body);
+     response.send("testerror:"+err.body);
    else
-     response.send(result);
-     console.log(result);
+     response.send(medias);
+     console.log("test done:"+medias);
 
  });
 });
