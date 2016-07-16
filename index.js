@@ -9,11 +9,11 @@ var webhook_url = 'http://eggyo-ig-sub.herokuapp.com/webhook';
 var redirect_uri = 'http://eggyo-ig-sub.herokuapp.com/handleauth';
 
 exports.authorize_user = function(req, res) {
-  res.redirect(api.get_authorization_url(redirect_uri, { scope: ['likes'], state: 'a state' }));
+  res.redirect(ig.get_authorization_url(redirect_uri, { scope: ['likes'], state: 'a state' }));
 };
 
 exports.handleauth = function(req, res) {
-  api.authorize_user(req.query.code, redirect_uri, function(err, result) {
+  ig.authorize_user(req.query.code, redirect_uri, function(err, result) {
     if (err) {
       console.log(err.body);
       res.send("Didn't work");
